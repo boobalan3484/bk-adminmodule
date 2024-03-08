@@ -1,11 +1,17 @@
-import React from 'react'
 
-const App = () => {
+import { Route, Routes } from 'react-router-dom'
+import Login from './Login'
+import Register from './Register'
+
+function App() {
+ 
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className=' text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture'>
+       <Routes>
+        <Route path="Login" element={<Login />} />
+        <Route path="Register" element={<Register />} />
+       </Routes>
     </div>
   )
 }
