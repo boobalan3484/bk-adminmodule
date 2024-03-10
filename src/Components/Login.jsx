@@ -4,7 +4,8 @@ import {  FaUnlock, FaUser } from "react-icons/fa";
 function Login() {
     return (
         <div>
-           <div className=" bg-slate-800 border w-[85vw] h-max portrait:h-max border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
+            <div className=' text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture'>
+               <div className=" bg-slate-800 border w-[85vw] h-max portrait:h-max border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
             <h1 className=" text-2xl text-white font-bold text-center mb-6 xl:text-4xl lg:text-4xl ">Login</h1>
             <form action="" method="post">
                 <div className=" relative my-5 xl:mt-10 xl:text-2xl">
@@ -30,7 +31,8 @@ function Login() {
                 <span className=" mt-4 lg:text-lg md:text-xl">New Here? <Link to="/Register" className=" text-gray-950">Create an account</Link> </span>
             </div>
             </form>
-        </div>
+               </div>
+            </div>
         </div>
        
     )

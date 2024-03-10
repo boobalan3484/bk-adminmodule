@@ -5,7 +5,8 @@ import {  FaUnlock, FaUser } from "react-icons/fa";
 function Register() {
     return (
         <div>
-            <div>
+            <div className=' text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture'>
+               <div>
             <div className="  bg-slate-800 border w-[85vw] h-[80vh] portrait:h-max border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
             <h1 className=" text-2xl text-white font-bold text-center mb-6 xl:text-4xl lg:text-4xl ">Register</h1>
             <form action="" method="post">
@@ -36,7 +37,8 @@ function Register() {
             </div>
             </form>
         </div>
-        </div>
+               </div>
+            </div>
         </div>
     )
 }
