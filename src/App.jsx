@@ -1,4 +1,4 @@
-import Auth from "./Auth"
+import Auth from "./Components/Auth"
 
 function App() {
  

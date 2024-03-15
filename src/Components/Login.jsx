@@ -4,7 +4,8 @@ import {  FaUnlock, FaUser } from "react-icons/fa";
 function Login() {
     return (
         <div>
-           <div className=" bg-slate-800 border w-[85vw] h-[42vh] border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 md:w-[70vw] md:h-[48vh] lg:h-[48vh] lg:w-[60vw] xl:w-[50vw] xl:h-[59vh] 2xl:w-[58vw] 2xl:h-[62vh] ">
+            <div className=' text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture'>
+               <div className=" bg-slate-800 border w-[85vw] h-max portrait:h-max border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
             <h1 className=" text-2xl text-white font-bold text-center mb-6 xl:text-4xl lg:text-4xl ">Login</h1>
             <form action="" method="post">
                 <div className=" relative my-5 xl:mt-10 xl:text-2xl">
@@ -19,21 +20,19 @@ function Login() {
                 xl:peer-focus:-translate-y-8 xl:translate-y-6">Password</label>
                 <FaUnlock className="h-3 absolute top-1 right-0"/>
             </div>
-            <div className=" flex justify-between items-center text-sm mt-7 xl:mt-4 md:text-xl xl:text-2xl">
-                <div className=" flex gap-2  items-center lg:text-xl" >
-                    <input type="checkbox" name="" id="" />
-                    <label htmlFor="Remember Me">Remember Me</label>
-                </div>
+            <div className=" flex justify-center items-center text-sm mt-7 xl:mt-4 md:text-xl xl:text-2xl">
+               
                 <Link to="" className=" lg:text-lg xl:mt-4 xl:text-xl cursor-pointer text-sm md:text-xl text-gray-950">Forget Password?</Link>
             </div>
             <div className=" flex justify-center">
-              <button type="submit" className=" cursor-pointer mb-4 text-[18px] w-full mt-6  rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-0 transition-colors duration-300 xl:py-3 xl:text-xl md:py-2 lg:py-1">Login</button>
+              <button type="submit" className=" cursor-pointer  text-[18px] w-full mt-6  rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-0 transition-colors duration-300 xl:py-3 xl:text-xl md:py-2 lg:py-1">Login</button>
             </div>
             <div className="flex justify-center text-sm xl:text-2xl ">
                 <span className=" mt-4 lg:text-lg md:text-xl">New Here? <Link to="/Register" className=" text-gray-950">Create an account</Link> </span>
             </div>
             </form>
-        </div>
+               </div>
+            </div>
         </div>
        
     )
