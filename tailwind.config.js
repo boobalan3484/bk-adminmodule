@@ -11,6 +11,10 @@ export default {
       backgroundImage: () => ({
         'hero-pattern': "url('./src/Assets/1.jpg')",
         'footer-texture': "url('./src/Assets/5.jpeg')",
+        'form-texture': "url('./src/Assets/3.jpg')",
+        'form-pattern': "url('./src/Assets/8.jpg')",
+        'png-pattern': "url('./src/Assets/png.png')",
+
       })
     },
   },

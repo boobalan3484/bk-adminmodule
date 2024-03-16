@@ -1,11 +1,11 @@
-import Auth from "./Components/Auth"
+import Router from "./Components/Router"
 
 function App() {
  
 
   return (
     <div>
-      <Auth/>
+      <Router/>
     </div>
   )
 }
