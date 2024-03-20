@@ -1,25 +1,23 @@
-import Login from './Login'
-import Register from './Register'
+import Login from "./Login";
+import RegistrationForm from "./Register";
 
-import { Route, Routes } from 'react-router-dom'
-import Tournament from './Tournament'
-import Table from './TimeTable'
-import Staff from './Staff'
+import { Route, Routes } from "react-router-dom";
+import Tournament from "./Tournament";
+import Table from "./TimeTable";
+import Staff from "./Staff";
 
 function Auth() {
-    return (
-        <div>
-          
-       <Routes>
+  return (
+    <div>
+      <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="Register" element={<Register />} />
+        <Route path="/register" element={<RegistrationForm />} />
         <Route path="/tournament" element={<Tournament />} />
         <Route path="/timetable" element={<Table />} />
         <Route path="/staff-details" element={<Staff />} />
-
-       </Routes>
-        </div>
-    )   
+      </Routes>
+    </div>
+  );
 }
 
-export default Auth
+export default Auth;
