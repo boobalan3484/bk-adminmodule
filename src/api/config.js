@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyB6szKD8D8XXM51IcvGY3sO8YlWXOwD4TQ",
@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-RP6NVDZJ29"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 

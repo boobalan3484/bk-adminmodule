@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FaMailBulk, FaUnlock,  } from "react-icons/fa";
+import { FaMailBulk, FaUnlock } from "react-icons/fa";
 import { auth } from "../api/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,6 +16,7 @@ const LoginForm = () => {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in");
       alert("succesfully Login");
+      navigate("/home");
     } catch (error) {
       console.error("Login failed:", error.message);
       alert(error.message);
@@ -37,7 +40,7 @@ const LoginForm = () => {
             />
             <label
               className="text-sm absolute text-white mb-5 duration-300 transform translate-y-3 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-focus:scale-75 peer-focus:-translate-y-8 md:text-xl md:peer-focus:-translate-y-8 md:translate-y-3 lg:peer-focus:-translate-y-8
-             xl:peer-focus:-translate-y-8 xl:translate-y-8 lg:translate-y-6"
+              xl:peer-focus:-translate-y-8 xl:translate-y-8 lg:translate-y-6"
             >
               Email:
             </label>
@@ -53,14 +56,18 @@ const LoginForm = () => {
             />
             <label
               className="text-sm absolute text-white mb-5 duration-300 transform translate-y-3 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-6 peer-focus:scale-75 peer-focus:-translate-y-8 md:text-xl md:peer-focus:-translate-y-8 md:translate-y-3 lg:peer-focus:-translate-y-8
-             xl:peer-focus:-translate-y-8 xl:translate-y-8 lg:translate-y-6"
+              xl:peer-focus:-translate-y-8 xl:translate-y-8 lg:translate-y-6"
             >
               Password:
             </label>
             <FaUnlock className=" h-3 absolute bottom-2 right-0" />
           </div>
-          <div className=" flex justify-center md:mt-10">
+          <div className=" flex justify-center mt-5 md:mt-10 md:text-xl font-semibold">
+            <Link to="/reset-password">Forgot Password</Link>
+          </div>
+          <div className=" flex justify-center md:mt-2">
             <button
+              onClick={handleLogin}
               type="submit"
               className=" cursor-pointer  text-[18px] w-full mt-6  rounded-full bg-white text-emerald-800 hover:bg-emerald-600 hover:text-white py-0 transition-colors duration-300 xl:py-3 xl:text-xl md:py-2 lg:py-1"
             >
