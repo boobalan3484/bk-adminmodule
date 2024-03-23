@@ -14,6 +14,7 @@ export default {
         'form-texture': "url('./src/Assets/3.jpg')",
         'form-pattern': "url('./src/Assets/8.jpg')",
         'png-pattern': "url('./src/Assets/png.png')",
+        'pencil':"url('./src/Assets/pencil.png')"
 
       })
     },

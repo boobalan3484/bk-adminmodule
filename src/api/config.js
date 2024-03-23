@@ -1,21 +1,15 @@
 
 import { initializeApp } from "firebase/app";
-// import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCCPi8BUj7Z6JWvYahlg9Bzv8mRLBvRAqQ",
-  authDomain: "karate-training-school.firebaseapp.com",
-  projectId: "karate-training-school",
-  storageBucket: "karate-training-school.appspot.com",
-  messagingSenderId: "1008968807909",
-  appId: "1:1008968807909:web:8a9c0ba280a114a23b6b0c",
-  measurementId: "G-D95MWRBCB0"
+  apiKey: "AIzaSyCJjq5_3gPgYcDEKptNixlg0QIgdh2Io9Q",
+  authDomain: "bohar-karate-training-sc-869c4.firebaseapp.com",
+  projectId: "bohar-karate-training-sc-869c4",
+  storageBucket: "bohar-karate-training-sc-869c4.appspot.com",
+  messagingSenderId: "526576146667",
+  appId: "1:526576146667:web:257a341a5642af677806ae",
+  measurementId: "G-130WVRLMP5"
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-
-
-
-

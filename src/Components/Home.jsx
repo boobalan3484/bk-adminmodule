@@ -24,6 +24,7 @@ function Home() {
         </h1>
         <TournamentList />
       </div>
+      <hr />
       <div className=" p-2">
         <h1 className=" text-center font-thin text-xl py-4">Master details</h1>
         <StaffList />

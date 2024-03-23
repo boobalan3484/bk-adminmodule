@@ -3,9 +3,9 @@ import { app } from "../api/config";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail,
+  // sendPasswordResetEmail,
 } from "firebase/auth";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,18 +29,18 @@ function LoginForm() {
     }
   };
 
-  const handleForgotPassword = async () => {
-    if (!email) {
-      setError("Please enter your email address to reset your password.");
-      return;
-    }
-    try {
-      await sendPasswordResetEmail(auth, email);
-      setError("Password reset email sent!");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  // const handleForgotPassword = async () => {
+  //   if (!email) {
+  //     setError("Please enter your email address to reset your password.");
+  //     return;
+  //   }
+  //   try {
+  //     await sendPasswordResetEmail(auth, email);
+  //     setError("Password reset email sent!");
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
 
   return (
     <div className=" text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture">
@@ -48,7 +48,11 @@ function LoginForm() {
         <h1 className=" text-center text-white font-extralight text-xl">
           Login
         </h1>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form
+          onSubmit={handleSubmit}
+          autoComplete="off"
+          className="flex flex-col gap-4"
+        >
           <label className="flex text-white flex-col">
             Email:
             <input
@@ -63,7 +67,7 @@ function LoginForm() {
           <label className="flex text-white flex-col">
             Password:
             <input
-              type="password"
+              type="text"
               value={password}
               placeholder="password"
               onChange={(e) => setPassword(e.target.value)}
@@ -77,21 +81,21 @@ function LoginForm() {
           >
             Sign In
           </button>
-          <a
+          {/* <a
             href="#!"
             onClick={handleForgotPassword}
             className="text-sm text-white text-center md:text-base  hover:text-blue-700"
           >
             Forgot Password?
-          </a>
+          </a> */}
         </form>
         {error && <p className="text-red-500">{error}</p>}
-        <div className=" text-blue-600 md:mt-3 md:text-base text-sm flex justify-center">
+        {/* <div className=" text-blue-600 md:mt-3 md:text-base text-sm flex justify-center">
           <span>New Here?</span>
           <Link className=" px-2 text-white hover:text-blue-600" to="/register">
             Register
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

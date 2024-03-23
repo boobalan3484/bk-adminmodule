@@ -1,13 +1,20 @@
 import { toast } from "react-toastify";
 import { app } from "../api/config";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  getStorage,
+  ref as storageRef,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const db = getFirestore(app);
 const storage = getStorage(app);
 
 function Staff() {
+  const navigate = useNavigate();
+
   const [value, setValue] = useState({
     Name: "",
     Specialization: "",
@@ -24,22 +31,22 @@ function Staff() {
 
     if (name === "Picture") {
       const file = files[0];
-      const storageReference = storageRef(storage, 'images/' + file.name);
+      const storageReference = storageRef(storage, "images/" + file.name);
       try {
         const snapshot = await uploadBytes(storageReference, file);
         const downloadURL = await getDownloadURL(snapshot.ref);
         setValue((prev) => ({
           ...prev,
-          Picture: downloadURL
+          Picture: downloadURL,
         }));
       } catch (error) {
-        console.error('Upload failed', error);
-        toast.error('Upload failed: ' + error.message);
+        console.error("Upload failed", error);
+        toast.error("Upload failed: " + error.message);
       }
     } else {
       setValue((prev) => ({
         ...prev,
-        [name]: value
+        [name]: value,
       }));
     }
   };
@@ -49,15 +56,27 @@ function Staff() {
       const docRef = await addDoc(collection(db, "staff"), value);
       toast.success("Staff member added successfully!");
       console.log("Document written with ID: ", docRef.id);
+
+      navigate(-1);
     } catch (error) {
       console.error("Error adding document: ", error);
       toast.error("Error adding document: " + error.message);
     }
   };
-  
+  const handlemove = () => {
+    navigate(-1);
+  };
 
   return (
     <div className=" text-gray-700 *:overflow-hidden  bg-zinc-300  bg-cover h-screen md:h-screen">
+       <div className=" p-3">
+        <button
+          onClick={handlemove}
+          className=" bg-slate-700 text-white px-5 py-2"
+        >
+          back
+        </button>
+      </div>
       <h1 className=" text-2xl md:pt-10 font-light text-center md:text-2xl">
         Master details
       </h1>
@@ -76,6 +95,7 @@ function Staff() {
               <input
                 type="text"
                 name="Name"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" text-gray-800 border  w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Staff Name"
@@ -89,6 +109,7 @@ function Staff() {
                 type="text"
                 name="Specialization"
                 onChange={(e) => handleChange(e)}
+                required
                 className=" text-gray-800 border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Specialization"
               />
@@ -102,6 +123,7 @@ function Staff() {
               <input
                 type="text"
                 name="Records"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Records"
@@ -114,6 +136,7 @@ function Staff() {
               <input
                 type="file"
                 name="Picture"
+                required
                 onChange={(e) => handleChange(e)}
                 className="  w-full py-2 px-2 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
               />
@@ -127,6 +150,7 @@ function Staff() {
               <input
                 type="text"
                 name="Address"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Address"
@@ -139,6 +163,7 @@ function Staff() {
               <input
                 type="text"
                 name="City"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="City"
@@ -153,6 +178,7 @@ function Staff() {
               <input
                 type="text"
                 name="District"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="District"

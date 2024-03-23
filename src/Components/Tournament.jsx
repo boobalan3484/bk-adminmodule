@@ -3,6 +3,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { app } from "../api/config";
 import { getFirestore } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const db = getFirestore(app);
 
@@ -15,6 +16,8 @@ function Tournament() {
   // const [city, setCity] = useState("");
   // const [district, setDistrict] = useState("");
   // const [chiefGuest, setChiefGuest] = useState("");/
+
+  const navigate = useNavigate();
 
   const [value, setValue] = useState({
     Tname: "",
@@ -112,13 +115,27 @@ function Tournament() {
         district: "",
         chiefGuest: "",
       }));
+      navigate(-1);
     } catch (error) {
       toast.error("Error adding document: ", error);
       console.log(error.message);
     }
   };
+
+  const handlemove = () => {
+    navigate(-1);
+  };
+
   return (
     <div className=" bg-slate-100 h-screen md:h-screen overflow-hidden  text-gray-600">
+      <div className=" p-3">
+        <button
+          onClick={handlemove}
+          className=" bg-slate-700 text-white px-5 py-2"
+        >
+          back
+        </button>
+      </div>
       <h1 className=" text-2xl md:pt-10 font-light text-center md:text-2xl">
         Tournament details
       </h1>
@@ -137,6 +154,7 @@ function Tournament() {
               <input
                 type="text"
                 name="Tname"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border  w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Tounament Name"
@@ -149,6 +167,7 @@ function Tournament() {
               <input
                 type="text"
                 name="fees"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Registration fees"
@@ -162,6 +181,7 @@ function Tournament() {
               </label>
               <input
                 type="text"
+                required
                 name="date"
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
@@ -174,6 +194,7 @@ function Tournament() {
               </label>
               <input
                 type="text"
+                required
                 name="time"
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
@@ -189,6 +210,7 @@ function Tournament() {
               <input
                 type="text"
                 name="address"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Address"
@@ -201,6 +223,7 @@ function Tournament() {
               <input
                 type="text"
                 name="city"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="City"
@@ -215,6 +238,7 @@ function Tournament() {
               <input
                 type="text"
                 name="district"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="District"
@@ -227,6 +251,7 @@ function Tournament() {
               <input
                 type="text"
                 name="chiefGuest"
+                required
                 onChange={(e) => handleChange(e)}
                 className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-600 rounded-md"
                 placeholder="Chief Guest"
