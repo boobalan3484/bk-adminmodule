@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import { app } from "../api/config";
 import pencil from "../Assets/pencil.png";
+import { toast } from "react-toastify";
 
 const db = getFirestore(app);
 console.log(db);
@@ -72,6 +73,7 @@ function StaffList() {
   const deletTournament = async (id) => {
     await deleteDoc(doc(db, "staff", id));
     fetchTournaments();
+    toast.success('deleted')
   };
 
   return (

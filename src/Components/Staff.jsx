@@ -68,7 +68,7 @@ function Staff() {
   };
 
   return (
-    <div className=" text-gray-700 *:overflow-hidden  bg-zinc-300  bg-cover h-screen md:h-screen">
+    <div className=" text-gray-700 *:overflow-hidde  bg-cover h-screen md:h-screen">
        <div className=" p-3">
         <button
           onClick={handlemove}
@@ -82,6 +82,7 @@ function Staff() {
       </h1>
       <div className="md:w-[99vw]  md:flex items-center  justify-center">
         <form
+        autoComplete="off"
           action=""
           onSubmit={handleSubmit}
           className=" mt-7 md:w-[70vw] md:border-t-8 border-indigo-500 md:border md:p-10 lg:p-14 "

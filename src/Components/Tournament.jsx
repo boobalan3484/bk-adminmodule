@@ -127,7 +127,7 @@ function Tournament() {
   };
 
   return (
-    <div className=" bg-slate-100 h-screen md:h-screen overflow-hidden  text-gray-600">
+    <div className=" h-screen md:h-screen overflow-hidden  text-gray-600">
       <div className=" p-3">
         <button
           onClick={handlemove}
@@ -141,6 +141,7 @@ function Tournament() {
       </h1>
       <div className="md:w-[99vw] overflow-hidden  md:flex items-center  justify-center">
         <form
+          autoComplete="off"
           action=""
           onSubmit={handleSubmit}
           className=" mt-7 md:w-[70vw] md:border-t-8 border-teal-500 overflow-hidden md:border md:p-10 lg:p-14 "
