@@ -127,7 +127,7 @@ function Tournament() {
   };
 
   return (
-    <div className=" h-screen md:h-screen overflow-hidden  text-gray-600">
+    <div className=" h-[135vh] overflow-hidden  text-gray-600">
       <div className=" p-3">
         <button
           onClick={handlemove}
