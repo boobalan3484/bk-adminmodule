@@ -1,6 +1,7 @@
 import TournamentList from "./TournamentCard";
 import LogoutButton from "./LogOut";
 import { Link } from "react-router-dom";
+import StaffList from "./StaffCard";
 
 function Home() {
   return (
@@ -25,7 +26,7 @@ function Home() {
       </div>
       <div className=" p-2">
         <h1 className=" text-center font-thin text-xl py-4">Master details</h1>
-        <TournamentList />
+        <StaffList />
       </div>
     </div>
   );

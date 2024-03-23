@@ -29,8 +29,8 @@ function RegistrationForm() {
   };
 
   return (
-    <div className="p-4 flex justify-center bg-slate-300 items-center h-screen">
-      <div className=" w-max md:w-[50vw] border-t-blue-500 border-t-8 rounded-md bg-white shadow-xl p-4">
+    <div className=" text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture">
+      <div className=" bg-slate-800 border w-[85vw] h-max portrait:h-max border-slate-100 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
         <h1 className=" text-center font-extralight text-xl "> Register</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <label className="flex flex-col">
@@ -84,7 +84,7 @@ function RegistrationForm() {
         {error && <p className="text-red-500">{error}</p>}
         <div className=" flex justify-center mt-2">
           <span className=" text-blue-500">Already have Account </span>
-          <Link className=" text-blue-500 font-semibold px-2" to="/">
+          <Link className=" text-white font-semibold px-2" to="/">
             Login
           </Link>
         </div>
