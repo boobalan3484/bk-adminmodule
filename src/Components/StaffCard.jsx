@@ -72,8 +72,8 @@ function StaffList() {
 
   const deletTournament = async (id) => {
     await deleteDoc(doc(db, "staff", id));
-    fetchTournaments();
     toast.success('deleted')
+    fetchTournaments();
   };
 
   return (
