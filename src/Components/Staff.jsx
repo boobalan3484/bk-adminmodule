@@ -68,7 +68,7 @@ function Staff() {
   };
 
   return (
-    <div className=" text-gray-700 *:overflow-hidde  bg-cover h-screen md:h-screen">
+    <div className=" text-gray-700 *:overflow-hidden  bg-cover h-screen md:h-screen">
        <div className=" p-3">
         <button
           onClick={handlemove}
