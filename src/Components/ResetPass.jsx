@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../api/config";
+import { app } from "../api/config";
+import { toast, ToastContainer } from "react-toastify";
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth(app);
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -9,10 +13,10 @@ const ForgotPassword = () => {
     e.preventDefault();
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("Password reset email sent! Please check your inbox.");
+        toast.success("Password reset email sent! Please check your inbox.");
       })
       .catch((error) => {
-        console.error("Error sending password reset email:", error);
+        toast.error("Error sending password reset email:", error);
       });
   };
 
@@ -35,6 +39,7 @@ const ForgotPassword = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

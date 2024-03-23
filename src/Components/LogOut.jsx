@@ -1,6 +1,9 @@
 import { signOut } from "firebase/auth";
-import { auth } from "../api/config";
+import { app } from "../api/config";
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth(app);
 
 const LogoutButton = () => {
   let navigate = useNavigate();
@@ -17,7 +20,10 @@ const LogoutButton = () => {
   };
 
   return (
-    <button className=" bg-slate-600 text-white px-2" onClick={handleLogout}>
+    <button
+      className=" bg-slate-600 text-white px-4 py-0 hover:bg-slate-500"
+      onClick={handleLogout}
+    >
       Logout
     </button>
   );
