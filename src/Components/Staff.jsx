@@ -174,7 +174,7 @@ function Staff() {
           <div className="md:grid md:grid-cols-1 lg:grid lg:grid-cols-1">
             <div className="p-2">
               <label htmlFor="" className=" block font-semibold">
-                District
+                State
               </label>
               <input
                 type="text"
