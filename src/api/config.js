@@ -1,20 +1,15 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB6szKD8D8XXM51IcvGY3sO8YlWXOwD4TQ",
-  authDomain: "login-41cc3.firebaseapp.com",
-  projectId: "login-41cc3",
-  storageBucket: "login-41cc3.appspot.com",
-  messagingSenderId: "743738346731",
-  appId: "1:743738346731:web:1590ecc24e8acd000982ae",
-  measurementId: "G-RP6NVDZJ29"
+  apiKey: "AIzaSyCJjq5_3gPgYcDEKptNixlg0QIgdh2Io9Q",
+  authDomain: "bohar-karate-training-sc-869c4.firebaseapp.com",
+  projectId: "bohar-karate-training-sc-869c4",
+  storageBucket: "bohar-karate-training-sc-869c4.appspot.com",
+  messagingSenderId: "526576146667",
+  appId: "1:526576146667:web:257a341a5642af677806ae",
+  measurementId: "G-130WVRLMP5"
 };
 
-
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
-
-
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
