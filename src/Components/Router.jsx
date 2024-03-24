@@ -10,6 +10,7 @@ import ForgotPassword from "./ResetPass";
 import { ToastContainer } from "react-toastify";
 import TournamentList from "./TournamentCard";
 import StaffList from "./StaffCard";
+import PrivateRoute from "./PrivateRoute";
 
 function Auth() {
   return (
@@ -18,13 +19,14 @@ function Auth() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/tournament" element={<Tournament />} />
-        <Route path="/timetable" element={<Table />} />
-        <Route path="/card" element={<TournamentList />} />
-        <Route path="/staff-data" element={<StaffList/>} />
-        
-        <Route path="/staff-details" element={<Staff />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/tournament" element={<Tournament />} />
+          <Route path="/timetable" element={<Table />} />
+          <Route path="/card" element={<TournamentList />} />
+          <Route path="/staff-data" element={<StaffList />} />
+          <Route path="/staff-details" element={<Staff />} />
+        </Route>
       </Routes>
       <ToastContainer />
     </div>
