@@ -12,6 +12,7 @@ function Home() {
           <nav className=" flex gap-5">
             <Link to="/tournament">Tournament</Link>
             <Link to="/staff-details">Staff details</Link>
+            <Link to="/contact-table">enquiry details</Link>
           </nav>
         </div>
         <h1 className=" px-10">

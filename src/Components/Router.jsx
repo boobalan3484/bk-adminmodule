@@ -11,6 +11,8 @@ import { ToastContainer } from "react-toastify";
 import TournamentList from "./TournamentCard";
 import StaffList from "./StaffCard";
 import PrivateRoute from "./PrivateRoute";
+import TableComponent from "./ContactData";
+import FormComponent from "./Contact-form";
 
 function Auth() {
   return (
@@ -23,6 +25,9 @@ function Auth() {
           <Route path="/home" element={<Home />} />
           <Route path="/tournament" element={<Tournament />} />
           <Route path="/timetable" element={<Table />} />
+          <Route path="/contact-table" element={<TableComponent />} />
+          <Route path="/contact-form" element={<FormComponent />} />
+          
           <Route path="/card" element={<TournamentList />} />
           <Route path="/staff-data" element={<StaffList />} />
           <Route path="/staff-details" element={<Staff />} />
