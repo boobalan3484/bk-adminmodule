@@ -1,4 +1,4 @@
-import { useState } from "react";      
+import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { app } from "../api/config";
@@ -29,7 +29,7 @@ function RegistrationForm() {
   };
 
   return (
-    <div className=" text-white h-[100vh] flex justify-center items-center bg-cover  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture">
+    <div className=" text-white h-[100vh] flex justify-center items-center bg-cover bg-small  md:bg-cover sm:bg-cover md:bg-hero-pattern bg-center bg-footer-texture">
       <div className=" bg-slate-800 border w-[85vw] h-max portrait:h-max border-slate-100 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 md:w-[70vw] md:h-fit md:portrait:h-max sm:portrait:h-max sm:h-max lg:h-max lg:w-[60vw] xl:w-[50vw] xl:h-max 2xl:w-[45vw] 2xl:portrait:h-max   2xl:h-max  ">
         <h1 className=" text-center font-extralight text-xl "> Register</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
